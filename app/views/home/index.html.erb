@@ -1,34 +1,28 @@
 <div class = "header-title containfeature"> 
- <h2> Personal Project</h2>
+ <h2> Recently view</h2>
 </div>
-  <div class="containfeature">
+<div class = "header-title containfeature"> 
+<h6 style="margin:34%; "><%= link_to 'Add Board',new_board_path, class:'btn button6'%></h6>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+<%= render partial: 'boards/form' %>
+
+  <div class="containfeature ">
+
+    <div class="wrapper-nub table-responsive">
+    <div class="container" id ="items">
+<h2 align ="center">::Personal Project::.</h2>
+ </div>
+ 
     <% @boards.each do |board| %>
-     <div class = "box" onclick = "showing()" >  
-        <div class="dropdown" style="text-align: right;">
-          <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-            :::
-          </a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <center><strong>Action</strong></center>
-            <div class="dropdown-divider "></div>
-            <%= link_to 'Add New board',new_board_list_path(board), class: "dropdown-item" %>
-            <%= link_to 'Edit', edit_board_path(board), class: "dropdown-item" %>
-            <%= link_to 'Delete', board, method: :delete, data: { confirm: 'Are you sure?' }, class: "dropdown-item" %>
-          </div>
-        </div>
-        <div class="text">
-          <%= board.title %>
-        </div>
-        <div class="footer-board">
-        <%= link_to 'Go To Board', board_lists_path(board) , :class =>"btn btn-primary btn-lg btn-block" %>
-        </div>
-      </div>  
+     <%= render partial: 'boards/item', locals: {board: b} %>
     <% end %>
-    <div class ="box">
-      <h1 style="margin:34%; font-size: 98px;"><%= link_to '+',new_board_path %></h1>
     </div>
   </div>
- 
+  </div>
+
 
 
 

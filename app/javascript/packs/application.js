@@ -17,6 +17,8 @@ import '../stylesheets/index'
 import Vue from 'vue'
 import App from '../app.vue'
 
+window.$ =$
+
 document.addEventListener('turbolinks:load',function() {
     var element = document.querySelector("#boards")
     if(element != undefined){

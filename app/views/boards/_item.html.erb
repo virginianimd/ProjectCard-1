@@ -1,0 +1,22 @@
+<div class = "box " onclick = "showing()" >  
+        <div class="dropdown" style="text-align: right;">
+          <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+          <i class="fa fa-pencil">
+          </a></i>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <center><strong>Action</strong></center>
+            <div class="dropdown-divider "></div>
+            <%= link_to 'Add New board',new_board_list_path(board), class: "dropdown-item" %>
+            <%= link_to 'Edit', edit_board_path(board), class: "dropdown-item" %>
+            <%= link_to 'Delete', board, method: :delete, data: { confirm: 'Are you sure?' }, class: "dropdown-item" %>
+          </div>
+        </div>
+        <div class="text"  align="center">
+          <%= board.title %>
+        </div>
+        <div class="body-board">
+        &nbsp;
+        <h6>Lihat Detail Board.
+        <%= link_to 'Klik Disini', board_lists_path(board) %></h6>
+        </div>
+      </div>  

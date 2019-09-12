@@ -31,6 +31,7 @@ class BoardsController < ApplicationController
       if @board.save
         format.html { redirect_to root_path, notice: 'Board was successfully created.' }
         format.json { render :show, status: :created, location: @board }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @board.errors, status: :unprocessable_entity }
