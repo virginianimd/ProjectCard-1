@@ -57,3 +57,4 @@ gem 'image_processing', '~> 1.2'
 gem "font-awesome-rails"
 gem 'acts_as_list'
 
+
