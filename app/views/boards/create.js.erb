@@ -1,3 +1,2 @@
 $("#exampleModal").modal('hide');
-const.content = "#{j render partial:"boards/item", locals:{board:@board}}";
-$("#item").append("content");
+$('#items').append("<%= j render partial:"boards/item", locals:{board:@board} %>");

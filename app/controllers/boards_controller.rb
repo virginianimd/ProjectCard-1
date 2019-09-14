@@ -29,7 +29,7 @@ class BoardsController < ApplicationController
 
     respond_to do |format|
       if @board.save
-        format.html { redirect_to root_path, notice: 'Board was successfully created.' }
+        format.html { redirect_to boards_url, notice: 'Board was successfully created.' }
         format.json { render :show, status: :created, location: @board }
         format.js
       else
