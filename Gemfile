@@ -56,5 +56,5 @@ gem 'font-awesome-sass', '~> 5.5', '>= 5.5.0.1'
 gem 'image_processing', '~> 1.2'
 gem "font-awesome-rails"
 gem 'acts_as_list'
-
+gem 'devise_invitable', '~> 2.0.0'
 
