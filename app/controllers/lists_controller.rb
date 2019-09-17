@@ -18,12 +18,6 @@ class ListsController < ApplicationController
     @list = List.new
   end
 
-  def new_list
-    respond_to do |format|
-      format.html
-      format.js
-    end
-  end
 
   # GET /lists/1/edit
   def edit
@@ -38,6 +32,7 @@ class ListsController < ApplicationController
       if @list.save
         format.html { redirect_to board_lists_path, notice: 'List was successfully created.' }
         format.json { render :show, status: :created, location: @list }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @list.errors, status: :unprocessable_entity }
