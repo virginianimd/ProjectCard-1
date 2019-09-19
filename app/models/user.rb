@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   attr_accessor :login
-  has_many :boards
+  has_many :boards, through: :boardmembers
   has_many :cards
+  has_many :boardmembers
   has_one_attached :avatar
   
 

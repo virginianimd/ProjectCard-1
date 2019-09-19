@@ -1,23 +1,29 @@
 <p id="notice"><%= notice %></p>
-<h1>Lists</h1>
+<h1><%= best_in_place @board,:description, :as => :input %></h1>
 
-<%= link_to 'New List', board_new_list_path, {:remote => true, 'data-target' => '#modal-window'} %>
 <hr />
 <div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
-<div class = "header-title containfeature"> 
-  <h2> Recently view</h2>
-</div>
+
 <div class = "header-title containfeature"> 
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#listModal">
     ADD list
   </button>
+  <%= link_to 'Add Member', new_board_boardmember_path %>
     <%= render partial: 'lists/form', locals: {list: List.new} %>  
    <div class="wrapper">
         <h2 class="center"> LIST </h2>
-        <div class="kolom">
+        <div class="kolom" id ="items" >
           <% @lists.each do |list| %>
           <%= render partial: 'lists/item', locals: {list: list} %>
-        <% end %>
+   
+        <div class="set-margin"></div>
+              
+              <% list.cards.each do |card| %>
+                <%= render partial: 'cards/content', locals: {card: card} %>
+                <% end %>
+                <% end %>
+                </div>
+        </p>
         </div>
     </div>
 </div>
