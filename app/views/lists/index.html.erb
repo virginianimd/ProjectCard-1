@@ -1,35 +1,36 @@
 <p id="notice"><%= notice %></p>
-<h1>Lists</h1>
-<%= link_to 'New List', board_new_list_path, {:remote => true, 'data-target' => '#modal-window'} %>
+<h1><%= best_in_place @board,:description, :as => :input %></h1>
+
 <hr />
 <div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Position</th>
-       <th>Board</th>
 
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @lists.each do |list| %>
-      <tr>
-        <td><%= list.name %></td>
-        <td><%= list.position %></td>
-        <td><%= list.board_id %></td>
-        
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
+<div class = "header-title containfeature"> 
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#listModal">
+    ADD list
+  </button>
+  <%= link_to 'Add Member', new_board_boardmember_path %>
+    <%= render partial: 'lists/form', locals: {list: List.new} %>  
+   <div class="wrapper">
+        <h2 class="center"> LIST </h2>
+        <div class="kolom" id ="items" >
+          <% @lists.each do |list| %>
+          <%= render partial: 'lists/item', locals: {list: list} %>
+   
+        <div class="set-margin"></div>
+              
+              <% list.cards.each do |card| %>
+                <%= render partial: 'cards/content', locals: {card: card} %>
+                <% end %>
+                <% end %>
+                </div>
+        </p>
+        </div>
+    </div>
+</div>
 
  
 <%= tag.div id: :boards, data: { lists: @lists.to_json(include: :cards) } %>
+
+
 
 

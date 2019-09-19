@@ -1,4 +1,4 @@
-<%= form_with(model: boardmember, local: true) do |form| %>
+<%= form_with(model: boardmember,url: board_boardmembers_path, local: true) do |form| %>
   <% if boardmember.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(boardmember.errors.count, "error") %> prohibited this boardmember from being saved:</h2>
@@ -17,7 +17,7 @@
 
   <div class="field">
   <%= form.label :board_id %>
-  <%= form.text_field :board_id %>
+  <%= form.text_field :board_id,:value => params[:board_id] %>
 </div>
 
   <div class="field">

@@ -31,7 +31,7 @@ class BoardsController < ApplicationController
     respond_to do |format|
       if @board.save
         format.html { redirect_to boards_url, notice: 'Board was successfully created.' }
-        format.json { render :show, status: :created, location: @board }
+        format.json { respond_with_bip(@board) }
         format.js
       else
         format.html { render :new }

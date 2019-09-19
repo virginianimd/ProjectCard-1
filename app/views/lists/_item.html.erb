@@ -1,0 +1,12 @@
+<p class="paragraf">
+                &nbsp;
+                <div class="set-margin"></div>
+                <div class="card-responsive card col-sm-3 border-2  ">
+                    <div class="card-header bold border-O  ">
+                        <h4 class="center"><%= list.name %></h4>
+                    </div>
+
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cardModal">
+                    ADD card
+                    </button>
+                    <%= render partial: 'cards/form', locals: {card: Card.new} %>                     

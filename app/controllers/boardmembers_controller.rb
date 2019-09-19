@@ -28,7 +28,7 @@ class BoardmembersController < ApplicationController
 
     respond_to do |format|
       if @boardmember.save
-        format.html { redirect_to @boardmember, notice: 'Boardmember was successfully created.' }
+        format.html { redirect_to board_lists_path, notice: 'Boardmember was successfully created.' }
         format.json { render :show, status: :created, location: @boardmember }
       else
         format.html { render :new }
