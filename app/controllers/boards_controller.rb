@@ -13,7 +13,6 @@ class BoardsController < ApplicationController
   def show
     
   end
-
   # GET /boards/new
   def new
     @board = Board.new
