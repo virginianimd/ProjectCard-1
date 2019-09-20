@@ -8,28 +8,29 @@
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#listModal">
     ADD list
   </button>
+
   <%= link_to 'Add Member', new_board_boardmember_path %>
     <%= render partial: 'lists/form', locals: {list: List.new} %>  
-   <div class="wrapper">
-        <h2 class="center"> LIST </h2>
-        <div class="kolom" id ="items" >
-          <% @lists.each do |list| %>
-          <%= render partial: 'lists/item', locals: {list: list} %>
-   
-        <div class="set-margin"></div>
-              
-              <% list.cards.each do |card| %>
-                <%= render partial: 'cards/content', locals: {card: card} %>
-                <% end %>
-                <% end %>
-                </div>
-        </p>
-        </div>
-    </div>
-</div>
 
+   <div class="wrapper">
+      <h2 class="center"> LIST </h2>
+      
+      <div class="kolom" id ="items" >
+        <% @lists.each do |list| %>
+          <%= render partial: 'lists/item', locals: {list: list} %>
+          
+          <div class="set-margin"></div>
+          
+          <%# list.cards.each do |card| %>
+            <%#= render partial: 'cards/content', locals: {card: card} %>
+          <%# end %>          
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
  
-<%= tag.div id: :boards, data: { lists: @lists.to_json(include: :cards) } %>
+<%#= tag.div id: :boards, data: { lists: @lists.to_json(include: :cards) } %>
 
 
 
