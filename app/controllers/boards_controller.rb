@@ -13,7 +13,6 @@ class BoardsController < ApplicationController
   def show
     
   end
-
   # GET /boards/new
   def new
     @board = Board.new
@@ -72,6 +71,6 @@ class BoardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def board_params
-      params.require(:board).permit(:title, :description, :user_id)
+      params.require(:board).permit(:title, :description, :user_id, :member)
     end
 end

@@ -1,0 +1,5 @@
+class AddMemberToBoards < ActiveRecord::Migration[6.0]
+  def change
+    add_column :boards, :member, :string
+  end
+end
