@@ -4,3 +4,4 @@ class Card < ApplicationRecord
 
   validates :position, presence: true
 end
+
