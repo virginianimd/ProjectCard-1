@@ -33,6 +33,7 @@ class CardsController < ApplicationController
       else
         format.html { render :new }
         format.json { render json: @card.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
