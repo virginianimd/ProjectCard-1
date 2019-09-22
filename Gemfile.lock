@@ -3,7 +3,7 @@ GIT
   revision: c02351f7d6649e2346394e33164a7154e671ec19
   specs:
     gravatar_image_tag (1.2.0)
-
+ 
 GEM
   remote: https://rubygems.org/
   specs:

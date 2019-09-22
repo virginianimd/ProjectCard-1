@@ -21,9 +21,9 @@
           
           <div class="set-margin"></div>
           
-          <%# list.cards.each do |card| %>
-            <%#= render partial: 'cards/content', locals: {card: card} %>
-          <%# end %>          
+          <% list.cards.each do |card| %>
+            <%= render partial: 'cards/content', locals: {card: card} %>
+          <% end %>          
         <% end %>
       </div>
     </div>
